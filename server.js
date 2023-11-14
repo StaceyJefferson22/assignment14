@@ -100,12 +100,13 @@ app.post("/api/athletes", upload.single("img"), (req,res) =>{
         return;
     }
 
-    const athlete= {
+    console.log(req.body.awards);
+
+    const athlete = {
         _id: athletes.length +1, 
         name: req.body.name,
         sport: req.body.sport,
         description: req.body.description,
-        awards: req.body.award.split(",")
     }
 
     athletes.push(athlete);
